@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Pagina de Contactos WS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <img src="https://github.com/ionic-team/ionic-docs/blob/main/static/demos/api/card/madison.jpg?raw=true" />
+    <ion-card-header>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>{{contacto.nombre}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input name="inputNombre" [(ngModel)]="contacto.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Direccion</ion-label>
+    <ion-input name="inputDireccion" [(ngModel)]="contacto.direccion"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Telefono</ion-label>
+    <ion-input name="inputTelefono" [(ngModel)]="contacto.numero"></ion-input>
+  </ion-item>
+
+  <section>
+    <header>Guardar</header>
+    <ion-button expand="block" (click)="guardar()">Guardar</ion-button>
+  </section>
+
+</ion-content>

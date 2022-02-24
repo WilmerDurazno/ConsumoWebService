@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Geolocalizacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (centerChange)="newAddress($event)">
+    <agm-marker [latitude]="centerLocation.latitude" [longitude]="centerLocation.longitude" [iconUrl]="icons.client"></agm-marker>
+    <ion-item *ngFor="let p of puntos | async">
+      <agm-marker [latitude]="p.lat" [longitude]="p.long" ></agm-marker>
+    </ion-item>
+  </agm-map>
+
+
+  <ion-button expand="block" (click)="guardarPunto(centerLocation.latitude,centerLocation.longitude)">Guardar</ion-button>
+  <ion-button expand="block" (click)="listarPuntos()">Listar Puntos</ion-button>
+
+</ion-content>

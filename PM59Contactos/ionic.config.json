@@ -1,0 +1,7 @@
+{
+  "name": "PM59Contactos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Listado de Contactos WS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--<h1>Bienvenido {{contacto | json}}</h1>-->
+  <h1>Bienvenido </h1>
+  <ion-list>
+    <ion-list-header> Recent Conversations </ion-list-header>
+
+    <ion-item *ngFor="let contacto of contactos | async">
+      <ion-avatar slot="start">
+        
+      </ion-avatar>
+      <ion-label (click)="editar(contacto)">
+        <h2>{{ contacto.nombre }}</h2>
+        <h3>{{ contacto.direccion }}</h3>
+        <p>{{ contacto.numero }}</p>
+      </ion-label>
+    </ion-item>
+
+    
+  </ion-list>
+
+</ion-content>
